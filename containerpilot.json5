@@ -1,0 +1,14 @@
+{
+  consul: "localhost:8500",
+  logging: {
+    level: "{{ .LOG_LEVEL | default "INFO" }}"
+  },
+  jobs: [
+    {
+      name: "redis",
+      exec: "/usr/local/bin/redis-start.sh",
+      restarts: "unlimited",
+      stopTimeout: "5s"
+    }
+  ]
+}
